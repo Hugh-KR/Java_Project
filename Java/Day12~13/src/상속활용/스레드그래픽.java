@@ -13,6 +13,10 @@ import javafx.scene.layout.Border;
 
 public class 스레드그래픽 extends JFrame {
 	JLabel count, image, day;
+	카운터스레드2 count2;
+	시각스레드2 day2;
+	이미지스레드2 image2;
+	static 스레드그래픽 f;
 	
 	public 스레드그래픽() {
 		setSize(800, 300);
@@ -24,29 +28,30 @@ public class 스레드그래픽 extends JFrame {
 		day.setFont(font);
 		image.setFont(font);
 		
-		
 		add(count, BorderLayout.WEST);
 		add(image, BorderLayout.EAST);
 		add(day, BorderLayout.SOUTH);
 		setVisible(true);
-		카운터스레드2 count2 = new 카운터스레드2();
+		
+		count2 = new 카운터스레드2();
+		day2 = new 시각스레드2();
+		image2 = new 이미지스레드2();
+		
 		count2.start();
-		시각스레드2 day2 = new 시각스레드2();
 		day2.start();
-		이미지스레드2 image2 = new 이미지스레드2();
 		image2.start();
 	}
 
 	public static void main(String[] args) {
 		// main 은 static.
-		스레드그래픽 name = new 스레드그래픽();
+		f = new 스레드그래픽();
 	}
 	
 	public class 카운터스레드2 extends Thread {
 
 		@Override
 		public void run() {
-			for (int i = 500; i >= 0; i--) {
+			for (int i = 10; i >= 0; i--) {
 				count.setText("카운트 >>" + i);
 
 				try {
@@ -57,7 +62,9 @@ public class 스레드그래픽 extends JFrame {
 				}
 				
 				if(i==0) {
-					JOptionPane.showMessageDialog(null, "사용시간 다 되었습니다. 퇴실 부탁드립니다.");
+					JOptionPane.showMessageDialog(f, "사용시간 다 되었습니다. 퇴실 부탁드립니다.");
+					image2.stop();
+					day2.stop();
 				}
 			}
 		}
