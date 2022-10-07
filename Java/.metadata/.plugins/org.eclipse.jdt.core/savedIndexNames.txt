@@ -23,7 +23,6 @@ INDEX VERSION 1.131+/Users/shinchanghyeok/Desktop/4학년_2학기/멀티캠퍼�
 1878482878.index
 3017938833.index
 1718196165.index
-2720000225.index
 2336540324.index
 3530890350.index
 3027713830.index
