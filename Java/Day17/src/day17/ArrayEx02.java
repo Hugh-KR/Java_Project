@@ -39,7 +39,6 @@ public class ArrayEx02 {
 		}
 		
 		for(String[] arr3 : arr2) {
-			System.out.print(" ");
 			for(String v : arr3) {
 			System.out.print(v);
 			}

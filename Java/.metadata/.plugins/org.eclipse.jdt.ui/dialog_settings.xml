@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
-	<item key="org.eclipse.jdt.ui.last.selected.jre.kind2" value="1"/>
-	<item key="org.eclipse.jdt.ui.last.selected.execution.enviroment" value="JavaSE-17"/>
+	<item key="org.eclipse.jdt.ui.last.selected.jre.kind2" value="2"/>
+	<item key="org.eclipse.jdt.ui.last.selected.execution.enviroment" value="JavaSE-11"/>
 	<item key="org.eclipse.jdt.ui.last.selected.project.jre" value="Java SE 8 [1.8.0_202]"/>
 	<item key="org.eclipse.jdt.ui.lastextjar" value="/Users/shinchanghyeok/Desktop/4학년_2학기"/>
 	<section name="completion_proposal_size">
@@ -104,5 +104,8 @@
 		<item key="DIALOG_WIDTH" value="391"/>
 		<item key="DIALOG_HEIGHT" value="454"/>
 		<item key="DIALOG_FONT_NAME" value="1|.AppleSystemUIFont|11.0|0|COCOA|1|.AppleSystemUIFont"/>
+	</section>
+	<section name="ClasspathContainerSelectionPage">
+		<item key="index" value="0"/>
 	</section>
 </section>
