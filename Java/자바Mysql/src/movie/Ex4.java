@@ -6,6 +6,7 @@ import java.io.InputStreamReader;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
@@ -18,15 +19,26 @@ public class Ex4 {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			Connection conn = DriverManager.getConnection(url, user, pass);
-			Statement stm = conn.createStatement(0, 0);
-			String sql = "SELECT * FROM sj";
-			stm.executeQuery(sql);
-			System.out.println(conn);
+			Statement stm = conn.createStatement();
+			String sql = "SELECT * FROM sj;";
+			ResultSet rs = stm.executeQuery(sql);
+			int tot = 0;
+			String avg;
+			
+			while(rs.next()) {
+				tot = rs.getInt(2) + rs.getInt(3) + rs.getInt(4);
+				avg = String.format("%.1f",(float)tot/3);
+				System.out.println(rs.getString(1) + ":" + tot + ":" + avg);
+			}
+			rs.close();
+			stm.close();
+			conn.close();
+			//System.out.println(conn);
 		} catch (ClassNotFoundException | SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
 	}
-
 }
+ 
