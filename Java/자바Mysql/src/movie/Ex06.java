@@ -56,6 +56,37 @@ class Db{
 			e.printStackTrace();
 		}
 	}
+	
+	public void delete(String name) {
+		String sql = "delete from phone where name = ?";
+		try {
+			PreparedStatement pmt = conn.prepareStatement(sql);
+			pmt.setString(1, name);
+			pmt.executeUpdate();
+			pmt.close();
+			
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	public void update(String name,String no) {
+		String sql = "update phone set no=? where name=?";
+		try {
+			PreparedStatement pmt = conn.prepareStatement(sql);
+			pmt.setString(1, no);
+			pmt.setString(2, name);
+			pmt.executeUpdate();
+			pmt.close();
+			
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 }
 
 class Phone{
@@ -90,13 +121,25 @@ public class Ex06 {
 		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
 		Db db = new Db();
 		while(true) {
-			System.out.print("1.등록 2.출력 0.종료: ");
+			System.out.print("1.등록 2.출력 3.삭제 4.수정 0.종료: ");
 			int s = Integer.parseInt(in.readLine());
 			if(s==1) {
 				db.insert(new Phone());
 			}
 			if(s==2) {
 				db.select();
+			}
+			if(s==3) {
+				System.out.print("이름 ");
+				String name = in.readLine();
+				db.delete(name);
+			}
+			if(s==4) {
+				System.out.print("이름 ");
+				String name = in.readLine();
+				System.out.print("전화번호 ");
+				String no = in.readLine();
+				db.update(name,no);
 			}
 			if(s==0) {
 				break;
