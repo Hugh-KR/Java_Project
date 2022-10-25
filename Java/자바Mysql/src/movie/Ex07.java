@@ -16,11 +16,35 @@ class Sp{
 		price = Integer.parseInt(in.readLine());
 	}
 }
+
+class DB1{
+	
+}
 public class Ex07 {
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+	public static void main(String[] args) throws NumberFormatException, IOException {
+		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+		while(true) {
+			System.out.println("1. 상품등록 2. 조회 3. 수정 4. 삭제 0.종료");
+			int s = Integer.parseInt(in.readLine());
+			if(s==1) {
+				new Sp();
+			}
+			if(s==2) {
+				
+			}
+			if(s==3) {
+				
+			}
+			if(s==4) {
+				
+			}
+			if(s==0) {
+				break;
+			}
+			
+		}
+		System.out.println("프로그램을 종료합니다.");
 	}
 
 }
