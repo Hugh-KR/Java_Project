@@ -18,7 +18,7 @@ class Sp{
 }
 
 class DB1{
-	
+	//
 }
 public class Ex07 {
 
