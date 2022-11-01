@@ -97,7 +97,7 @@ public class BoardDao {
 	        try {
 	            pstmt = conn.prepareStatement(sql);
 	            pstmt.setString(1,"7777");
-	            pstmt.setString(2,"문재인");
+	            pstmt.setString(2,"한문철");
 	            pstmt.setInt(3,id);
 	            pstmt.executeUpdate();
 	            System.out.println("수정된 id: " + id);
